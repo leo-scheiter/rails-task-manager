@@ -1,0 +1,15 @@
+<%= form_for(task) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Put the name of your task" %>
+  <br>
+  <%= f.label :details %>
+  <%= f.text_field :details%>
+  <br>
+  <% unless f.object.new_record? %>
+      <label>
+        <%= f.check_box :completed %> Completed
+      </label>
+  <% end %>
+  <br>
+  <%= f.submit "Add it" %>
+<% end %>

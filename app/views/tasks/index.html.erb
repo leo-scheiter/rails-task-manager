@@ -1,0 +1,13 @@
+<h1>All your tags</h1>
+
+<ul>
+<% @tasks.each do |task| %>
+  <li>
+    <%= link_to task.name, task_path(task) %> |
+    <%= link_to "x", task_path(task), method: :delete, data: {confirm: "Are you sure?"} %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to new_task_path do %> Add a new task
+<% end %>
